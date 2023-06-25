@@ -1,0 +1,35 @@
+Desafios:
+1. Textfield: Nome
+//input[@id="elementosForm:nome"]
+(//input)[6]
+//label[.="Nome:"]/../../td/input
+//table//input
+
+2. Radio: Sexo Feminino (sem usar id)
+//*[@type="radio" and @value="F"]
+//*[@name="elementosForm:sexo" and @value="F"]
+//label[contains(., "Feminino")]/../input
+
+3. Label "Pizza" (sem busca de texto)
+//*[@id = "elementosForm:comidaFavorita:2"]/../label
+(//*[@id = "elementosForm:comidaFavorita"]//label)[3]
+//*[@id = "elementosForm:comidaFavorita:2"]/following-sibling::label
+
+4. "Usuário B" da tabela sem header
+//table[@id="tabelaSemJSF"]//td[contains(., "Usuario B")]
+//table[@id="tabelaSemJSF"]/tbody/tr[3]/td[1]
+
+5. Botão do elemento cujo nome é "Maria"
+//*[@onclick="alert('Maria')"]
+//table[@id="elementosForm:tableUsuarios"]//td[contains(., "Maria")]/..//input[@type="button"]
+
+6. Radio do elemento cujo nome e escolaridade seja "Doutorado"
+//input[@onclick="alert('Doutorado')"]/../..//input[@type="radio"]
+//table[@id="elementosForm:tableUsuarios"]//td[1][.="Doutorado"]//..//td[2][.="Doutorado"]//..//input[@type="radio"]
+
+7. Textfield do segundo elemento com escolaridade "Superior"
+(//table[@id="elementosForm:tableUsuarios"]//td[2][.="Superior"])[2]//..//input[@type="text"]
+//os parêntestes agrupam o retorno, fazendo como se todos os elementos 
+estivessem no mesmo nível
+
+
